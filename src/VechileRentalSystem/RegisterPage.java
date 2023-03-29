@@ -109,6 +109,7 @@ public class RegisterPage {
 					else {
 						  panel_1.setVisible(true);
 					}
+//	how are u 
 						
 					    
 					  
