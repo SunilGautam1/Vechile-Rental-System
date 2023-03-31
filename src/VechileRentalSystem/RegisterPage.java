@@ -22,6 +22,7 @@ import javax.swing.JPasswordField;
 import javax.swing.ImageIcon;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.JTextPane;
 
 public class RegisterPage {
 
@@ -66,69 +67,24 @@ public class RegisterPage {
 		frame.setVisible(true);
 		
 		JPanel panel = new JPanel();
-		panel.setBounds(0, 0, 1540, 845);
+		panel.setBackground(new Color(173, 216, 230));
+		panel.setBounds(10, 10, 1576, 859);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
-		
-		JLabel lblNewLabel = new JLabel("Register Your Number");
-		lblNewLabel.setForeground(new Color(0, 0, 0));
-		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 40));
-		lblNewLabel.setBounds(131, 0, 479, 64);
-		panel.add(lblNewLabel);
-		
-		JLabel lblNewLabel_1 = new JLabel("Phone number");
-		lblNewLabel_1.setForeground(new Color(64, 0, 0));
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 20));
-		lblNewLabel_1.setBounds(334, 177, 168, 29);
-		panel.add(lblNewLabel_1);
-		
-		textField = new JTextField();
-		textField.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		textField.setBounds(299, 204, 296, 35);
-		panel.add(textField);
-		textField.setColumns(10);
 		
 		
 		
 			
 			JPanel panel_1 = new JPanel();
-			panel_1.setBounds(890, 0, 650, 870);
+			panel_1.setBounds(917, 0, 659, 859);
 			panel.add(panel_1);
-			panel_1.setBackground(new Color(128, 255, 128));
+			panel_1.setBackground(new Color(255, 255, 255));
 			panel_1.setLayout(null);
-			panel_1.setVisible(false);
-
-			JButton btnNewButton = new JButton("Confirm");
-			btnNewButton.addActionListener(new ActionListener() {
-				public void actionPerformed(ActionEvent e) {
-					String phonenumber = textField.getText();
-					if(RegistrationValidation.validateName(phonenumber)) {
-						JOptionPane.showMessageDialog(null, "Invalid  Number!!!!", "Error", JOptionPane.ERROR_MESSAGE);
-						
-					}
-					else {
-						  panel_1.setVisible(true);
-					}
-//	how are u 
-						
-					    
-					  
-			
-					
-					
-						
-					
-					
-				
-				}
-			});
-			btnNewButton.setBackground(new Color(255, 255, 255));
-			btnNewButton.setBounds(377, 284, 122, 29);
-			panel.add(btnNewButton);
+		
 			
 			JLabel lblNewLabel_4 = new JLabel("Please Enter Your details");
-			lblNewLabel_4.setBounds(153, 89, 287, 31);
-			lblNewLabel_4.setFont(new Font("Tahoma", Font.PLAIN, 25));
+			lblNewLabel_4.setBounds(209, 63, 326, 31);
+			lblNewLabel_4.setFont(new Font("Nirmala UI", Font.BOLD, 25));
 			panel_1.add(lblNewLabel_4);
 			
 			JLabel lblNewLabel_2 = new JLabel("Full Name");
@@ -145,24 +101,24 @@ public class RegisterPage {
 			JLabel lblNewLabel_2_1 = new JLabel("Email");
 			lblNewLabel_2_1.setForeground(new Color(0, 0, 0));
 			lblNewLabel_2_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
-			lblNewLabel_2_1.setBounds(166, 278, 200, 31);
+			lblNewLabel_2_1.setBounds(166, 247, 200, 31);
 			panel_1.add(lblNewLabel_2_1);
 			
 			textField_2 = new JTextField();
 			textField_2.setColumns(10);
-			textField_2.setBounds(166, 305, 243, 31);
+			textField_2.setBounds(166, 276, 243, 31);
 			panel_1.add(textField_2);
 			
 			JLabel lblNewLabel_2_1_1 = new JLabel("Password");
 			lblNewLabel_2_1_1.setForeground(new Color(0, 0, 0));
-			lblNewLabel_2_1_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
-			lblNewLabel_2_1_1.setBounds(166, 375, 200, 31);
+			lblNewLabel_2_1_1.setFont(new Font("Nirmala UI", Font.PLAIN, 20));
+			lblNewLabel_2_1_1.setBounds(166, 403, 200, 31);
 			panel_1.add(lblNewLabel_2_1_1);
 			
 			JLabel lblNewLabel_2_1_1_1 = new JLabel("Confrim Password");
 			lblNewLabel_2_1_1_1.setForeground(new Color(0, 0, 0));
-			lblNewLabel_2_1_1_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
-			lblNewLabel_2_1_1_1.setBounds(166, 473, 200, 31);
+			lblNewLabel_2_1_1_1.setFont(new Font("Nirmala UI", Font.PLAIN, 20));
+			lblNewLabel_2_1_1_1.setBounds(166, 488, 200, 31);
 			panel_1.add(lblNewLabel_2_1_1_1);
 			
 			JButton btnRegister = new JButton("Register");
@@ -181,14 +137,20 @@ public class RegisterPage {
 					  }
 					  else if (!RegistrationValidation.validateEmail(Email)) {
 					     JOptionPane.showMessageDialog(null, "Invalid Email", "Error", JOptionPane.ERROR_MESSAGE);
-					  } else if (!RegistrationValidation.validatePassword(passwordString)) {
+					  } else if  (!RegistrationValidation.validatePhoneNumber(phonenumber)) {
+						     JOptionPane.showMessageDialog(null, "Invalid Number", "Error", JOptionPane.ERROR_MESSAGE);
+					  }
+					  else if (!RegistrationValidation.validatePassword(passwordString)) {
+					  
 					     JOptionPane.showMessageDialog(null, "Invalid Password", "Error", JOptionPane.ERROR_MESSAGE);
-					  } else if (!RegistrationValidation.validateConfirmPassword(ConfirmPasswordString, ConfirmPasswordString)) {
+					  }
+					  else if (!RegistrationValidation.validateConfirmPassword(ConfirmPasswordString, ConfirmPasswordString)) {
 					     JOptionPane.showMessageDialog(null, "Password and Confirm Password do not match", "Error", JOptionPane.ERROR_MESSAGE);
 					  } else {
 						  
 					     JOptionPane.showMessageDialog(null, "Form Submitted Successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
-					        
+					     frame.setVisible(false);
+						  new LogInPage();
                          
 					  }	
 						if(RegistrationValidation.validateName(fullname) && RegistrationValidation.validateEmail(Email) && 
@@ -198,8 +160,7 @@ public class RegisterPage {
 							
 							
 							
-							     frame.setVisible(false);
-								  new LogInPage();
+							    
 							
 						}
 					
@@ -214,30 +175,38 @@ public class RegisterPage {
 			btnRegister.setFont(new Font("Tahoma", Font.PLAIN, 15));
 			btnRegister.setForeground(new Color(0, 0, 0));
 			btnRegister.setBackground(Color.WHITE);
-			btnRegister.setBounds(244, 598, 122, 29);
+			btnRegister.setBounds(244, 595, 122, 29);
 			panel_1.add(btnRegister);
 			
 			passwordField = new JPasswordField();
-			passwordField.setBounds(166, 406, 243, 31);
+			passwordField.setBounds(166, 432, 243, 31);
 			panel_1.add(passwordField);
 			
 			passwordField_1 = new JPasswordField();
-			passwordField_1.setBounds(166, 499, 251, 31);
+			passwordField_1.setBounds(166, 516, 251, 31);
 			panel_1.add(passwordField_1);
 			
-			JLabel lblNewLabel_5 = new JLabel("");
-			lblNewLabel_5.setBackground(new Color(128, 255, 128));
-			lblNewLabel_5.setIcon(new ImageIcon("C:\\Users\\gauta\\OneDrive\\Desktop\\Untitled design (1).png"));
-			lblNewLabel_5.setBounds(0, 0, 650, 844);
-			panel_1.add(lblNewLabel_5);
+			textField = new JTextField();
+			textField.setBounds(166, 358, 243, 35);
+			panel_1.add(textField);
+			textField.setFont(new Font("Tahoma", Font.PLAIN, 15));
+			textField.setColumns(10);
+			
+			JLabel lblNewLabel_1 = new JLabel("Phone number");
+			lblNewLabel_1.setBounds(166, 327, 168, 29);
+			panel_1.add(lblNewLabel_1);
+			lblNewLabel_1.setForeground(new Color(64, 0, 0));
+			lblNewLabel_1.setFont(new Font("Nirmala UI", Font.PLAIN, 20));
 			
 			JLabel lblNewLabel_6 = new JLabel("Already Have Account?");
+			lblNewLabel_6.setBounds(135, 679, 225, 35);
+			panel_1.add(lblNewLabel_6);
 			lblNewLabel_6.setForeground(new Color(0, 0, 0));
-			lblNewLabel_6.setFont(new Font("Tahoma", Font.PLAIN, 20));
-			lblNewLabel_6.setBounds(267, 378, 225, 35);
-			panel.add(lblNewLabel_6);
+			lblNewLabel_6.setFont(new Font("Nirmala UI", Font.PLAIN, 20));
 			
 			JLabel lblNewLabel_7 = new JLabel("Log in");
+			lblNewLabel_7.setBounds(374, 680, 100, 32);
+			panel_1.add(lblNewLabel_7);
 			lblNewLabel_7.addMouseListener(new MouseAdapter() {
 				@Override
 				public void mouseClicked(MouseEvent e) {
@@ -247,14 +216,23 @@ public class RegisterPage {
 			});
 			lblNewLabel_7.setForeground(new Color(0, 0, 0));
 			lblNewLabel_7.setFont(new Font("Tahoma", Font.BOLD, 20));
-			lblNewLabel_7.setBounds(484, 379, 100, 32);
-			panel.add(lblNewLabel_7);
 			
-			JLabel lblNewLabel_3 = new JLabel("");
+			JLabel lblNewLabel = new JLabel("About Us");
+			lblNewLabel.setFont(new Font("Nirmala UI", Font.BOLD, 30));
+			lblNewLabel.setBounds(113, 123, 45, 13);
+			panel.add(lblNewLabel);
 			
-			lblNewLabel_3.setIcon(new ImageIcon("C:\\Users\\gauta\\OneDrive\\Desktop\\Untitled design.png"));
-			lblNewLabel_3.setBounds(0, 0, 1554, 845);
+			JLabel lblNewLabel_3 = new JLabel("About Us");
+			lblNewLabel_3.setFont(new Font("Nirmala UI", Font.BOLD, 30));
+			lblNewLabel_3.setBounds(51, 146, 158, 63);
 			panel.add(lblNewLabel_3);
+			
+			JTextPane txtpnLoremIpsumDolor = new JTextPane();
+			txtpnLoremIpsumDolor.setBackground(new Color(173, 216, 230));
+			txtpnLoremIpsumDolor.setFont(new Font("Nirmala UI Semilight", Font.PLAIN, 25));
+			txtpnLoremIpsumDolor.setText("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend egestas porta. Pellentesque nisi massa, tincidunt quis posuere sed, tempus at orci. Morbi vitae egestas enim, sit amet porttitor elit. Morbi pharetra ornare velit sed cursus. Aenean viverra, massa sed interdum pretium, felis erat mollis nunc, vitae varius ex justo nec elit. Nunc porttitor egestas dapibus. Praesent sit amet tortor eget quam consequat malesuada vel quis lectus. Nulla facilisi. Aenean eros erat, lobortis in auctor vitae, tincidunt vitae neque. Phasellus mi sem, cursus sit amet justo id, iaculis faucibus ex.");
+			txtpnLoremIpsumDolor.setBounds(51, 234, 736, 356);
+			panel.add(txtpnLoremIpsumDolor);
 			Image img = new ImageIcon(this.getClass().getResource("/Screenshot_2023-03-09_at_12.16.png")).getImage();
 	}
 }

@@ -37,6 +37,8 @@ public static void profiledata(String phonenumber,String Password){
 	           Secondname = rs.getString("Full_Name");
 	           Username = rs.getString("Username");
 	           Email = rs.getString("Email");
+	           
+	           System.out.println(Phonenumber);
 	          
 	          
 	          
@@ -52,6 +54,5 @@ public static void profiledata(String phonenumber,String Password){
 	      e.printStackTrace();
 	    }
 }
-	
 
 }

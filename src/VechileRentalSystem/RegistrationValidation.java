@@ -9,6 +9,7 @@ public class RegistrationValidation {
 	    
 	    private static final String EMAIL_PATTERN = "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$";
 	    private static final String PASSWORD_PATTERN = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$";
+	    private static final String NUMBER = "^9[78]\\d{8}$";
 	
 
 	    private static Pattern pattern;
@@ -36,18 +37,12 @@ public class RegistrationValidation {
 	    public static boolean validateConfirmPassword(String password, String confirmPassword) {
 	        return password.equals(confirmPassword);
 	    }
-
 	    public static boolean validatePhoneNumber(String phoneNumber) {
-	        if (phoneNumber == null || phoneNumber.length() != 10) {
-	            return false;
-	        }
-	        if (phoneNumber.charAt(0) != '9') {
-	            return false;
-	        }
-	        return true;
+	    	 pattern = Pattern.compile(NUMBER);
+		        matcher = pattern.matcher(phoneNumber);
+		        return matcher.matches();
 	    }
+	   
 
+	    
 	}
-
-
-
