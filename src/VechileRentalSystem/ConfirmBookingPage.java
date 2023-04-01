@@ -54,11 +54,11 @@ public class ConfirmBookingPage {
      */
     private void initialize() {
         frame = new JFrame();
-        frame.getContentPane().setBackground(new Color(255, 255, 255));
-        frame.setBounds(500, 100, 500, 500);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.getContentPane().setLayout(null);
-        frame.setVisible(true);
+        frame.getContentPane().setBackground(new Color(255, 255, 255)); // set background color of the frame
+        frame.setBounds(500, 100, 500, 500); // set size and position of the frame
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // set default close operation for the frame
+        frame.getContentPane().setLayout(null); // set layout manager for the content pane
+        frame.setVisible(true); // set visibility of the frame to true
 
         JLabel lblNewLabel = new JLabel("");
         lblNewLabel.addMouseListener(new MouseAdapter() {
@@ -69,9 +69,9 @@ public class ConfirmBookingPage {
             }
         });
         Image img2 = new ImageIcon(this.getClass().getResource("/back-button.png")).getImage();
-        lblNewLabel.setIcon(new ImageIcon(img2));
-        lblNewLabel.setBounds(0, 0, 45, 33);
-        frame.getContentPane().add(lblNewLabel);
+        lblNewLabel.setIcon(new ImageIcon(img2)); // set an image icon for the label
+    lblNewLabel.setBounds(0, 0, 45, 33); // set size and position of the label
+    frame.getContentPane().add(lblNewLabel); // add the label to the content pane
 
         JLabel lblNewLabel_1 = new JLabel("Confirm Vehicle Number");
         lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
@@ -87,25 +87,30 @@ public class ConfirmBookingPage {
         btnNewButton.setBackground(new Color(255, 255, 255));
         btnNewButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-            	String vehicleNumber = textField.getText().trim();
-            	if (!vehicleNumber.isEmpty()) {
-            	    try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Oursystem", "root", "sunil123");
-            	            PreparedStatement stmt = conn.prepareStatement("UPDATE Vechile SET status='Booked' WHERE VechileNumber=?")) {
-            	        stmt.setString(1, vehicleNumber);
-            	        int updateCount = stmt.executeUpdate();
-            	        if (updateCount == 1) {
-            	        	JOptionPane.showMessageDialog(null,"Booked Sucessfully!!!");
-            	            // display a success message or perform other actions here
-            	        } else {
-            	           // System.out.println("No vehicle with number " + vehicleNumber + " was found.");
-            	            // display an error message or perform other actions here
-            	        	JOptionPane.showMessageDialog(null, "Vechile Not Found", "Error", JOptionPane.ERROR_MESSAGE);           	        }
-            	    } catch (SQLException ex) {
-            	        ex.printStackTrace();
-            	        // display an error message or perform other actions here
-            	    }
-            	
-            	}
+                String vehicleNumber = textField.getText().trim();
+                if (!vehicleNumber.isEmpty()) {
+                    try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/Oursystem", "root",
+                            "sunil123");
+                            PreparedStatement stmt = conn
+                                    .prepareStatement("UPDATE Vechile SET status='Booked' WHERE VechileNumber=?")) {
+                        stmt.setString(1, vehicleNumber);
+                        int updateCount = stmt.executeUpdate();
+                        if (updateCount == 1) {
+                            JOptionPane.showMessageDialog(null, "Booked Sucessfully!!!");
+                            // display a success message or perform other actions here
+                        } else {
+                            // System.out.println("No vehicle with number " + vehicleNumber + " was
+                            // found.");
+                            // display an error message or perform other actions here
+                            JOptionPane.showMessageDialog(null, "Vechile Not Found", "Error",
+                                    JOptionPane.ERROR_MESSAGE);
+                        }
+                    } catch (SQLException ex) {
+                        ex.printStackTrace();
+                        // display an error message or perform other actions here
+                    }
+
+                }
             }
         });
         btnNewButton.setBounds(167, 252, 108, 27);
