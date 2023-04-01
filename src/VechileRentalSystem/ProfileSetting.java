@@ -112,13 +112,13 @@ public class ProfileSetting {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String Fullname = textField_1.getText();
-				String url= "jdbc:mysql://localhost:3306/Oursystem";
+				String url= "jdbc:mysql://localhost:3306/Oursystem";  // connect to database
 				String username = "root";
 				String password = "sunil123";
 				
 				try {
-					Class.forName("com.mysql.cj.jdbc.Driver");
-					Connection Connect = DriverManager.getConnection(url,username,password);
+					Class.forName("com.mysql.cj.jdbc.Driver");  
+					Connection Connect = DriverManager.getConnection(url,username,password); //connection to Drivermanager
 			 
 				 
 					 String query = "UPDATE UserDetails SET Username = ? WHERE Phone_Number = ?";

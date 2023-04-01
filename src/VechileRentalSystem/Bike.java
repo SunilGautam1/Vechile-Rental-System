@@ -126,11 +126,11 @@ public class Bike {
 				new Vechile();
 			}
 		});
-		lblNewLabel_2_1_1.setFont(new Font("Nirmala UI Semilight", Font.PLAIN, 25));
+		lblNewLabel_2_1_1.setFont(new Font("Nirmala UI Semilight", Font.PLAIN, 25)); // Label 
 		lblNewLabel_2_1_1.setBounds(406, 32, 109, 29);
 		panel_5.add(lblNewLabel_2_1_1);
 		
-		JLabel lblNewLabel_2_1_2 = new JLabel("My Bookings");
+		JLabel lblNewLabel_2_1_2 = new JLabel("My Bookings"); 					
 		lblNewLabel_2_1_2.setFont(new Font("Nirmala UI Semilight", Font.PLAIN, 25));
 		lblNewLabel_2_1_2.setBounds(530, 32, 150, 29);
 		panel_5.add(lblNewLabel_2_1_2);
@@ -159,7 +159,7 @@ public class Bike {
 		panel_1.setBounds(962, 251, 489, 389);
 		frame.getContentPane().add(panel_1);
 		
-		JLabel lblNewLabel_3_1 = new JLabel("harley davidson");
+		JLabel lblNewLabel_3_1 = new JLabel("harley davidson"); // Icon of bike field 
 		lblNewLabel_3_1.setFont(new Font("Nirmala UI", Font.BOLD, 20));
 		lblNewLabel_3_1.setBackground(new Color(255, 160, 122));
 		lblNewLabel_3_1.setBounds(159, 341, 183, 38);
