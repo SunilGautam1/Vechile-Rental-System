@@ -15,6 +15,7 @@ static String Secondname;
  static String Email;
 
 public static void profiledata(String phonenumber,String Password){
+// profile database connection 
 	 String url= "jdbc:mysql://localhost:3306/Oursystem";
 		String username = "root";
 		String password = "sunil123";

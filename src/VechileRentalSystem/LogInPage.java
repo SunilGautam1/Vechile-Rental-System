@@ -180,6 +180,7 @@ public class LogInPage {
 		JButton btnNewButton = new JButton("Login");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+//			Login page database connection 
 				String phoneNumber = textField.getText();
 				char[] password = passwordField.getPassword();
 				String passwordString = new String(password);
