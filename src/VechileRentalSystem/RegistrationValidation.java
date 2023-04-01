@@ -4,6 +4,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class RegistrationValidation {
+//	Regix code for validation
 	
 	    private static final String NAME_PATTERN = "^[a-zA-Z]+$";
 	    

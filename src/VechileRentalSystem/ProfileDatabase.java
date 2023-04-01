@@ -15,18 +15,18 @@ static String Secondname;
  static String Email;
 
 public static void profiledata(String phonenumber,String Password){
-<<<<<<< HEAD
+
 // profile database connection 
 	 String url= "jdbc:mysql://localhost:3306/Oursystem";
-=======
-	 String url= "jdbc:mysql://localhost:3306/Oursystem"; // connect to the databse
->>>>>>> origin/main
+
+	 String url1= "jdbc:mysql://localhost:3306/Oursystem"; // connect to the databse
+
 		String username = "root";
 		String password = "sunil123";
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection Connect = DriverManager.getConnection(url,username,password); // connected to Drivermanager
+			Connection Connect = DriverManager.getConnection(url1,username,password); // connected to Drivermanager
 	 
 		 
 	      PreparedStatement stmt = Connect.prepareStatement("SELECT Phone_Number, Full_Name,Username, email, password FROM UserDetails WHERE Phone_Number = ?");
