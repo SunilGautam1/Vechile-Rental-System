@@ -114,7 +114,7 @@ public class Vechile {
 		JButton btnNewButton = new JButton("Search");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			// search vechile 
+			// search function 
 				String url= "jdbc:mysql://localhost:3306/Oursystem";
 				String username = "root";
 				String password = "sunil123";
