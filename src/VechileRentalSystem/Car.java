@@ -108,7 +108,7 @@ public class Car {
 			public void mouseClicked(MouseEvent e) {
 				frame.setVisible(true);
 				new Vechile();
-			}
+			} // vehicle name
 		});
 		lblNewLabel_2_1_1.setFont(new Font("Nirmala UI Semilight", Font.PLAIN, 25));
 		lblNewLabel_2_1_1.setBounds(400, 26, 109, 29);
