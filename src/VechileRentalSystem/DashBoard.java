@@ -81,8 +81,8 @@ public class DashBoard {
 		Image img9 = new ImageIcon(this.getClass().getResource("/user.png")).getImage();
 		
 		JLabel lblNewLabel_2 = new JLabel("Category");
-		lblNewLabel_2.setFont(new Font("Nirmala UI Semilight", Font.PLAIN, 25));
-		lblNewLabel_2.setBounds(312, 21, 109, 29);
+		lblNewLabel_2.setFont(new Font("Nirmala UI Semilight", Font.PLAIN, 25));//sets the font of a label 
+		lblNewLabel_2.setBounds(312, 21, 109, 29);	//o "Tahoma" with a bold style and a size of 25.
 		panel.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_2_1 = new JLabel("My Bookings");
