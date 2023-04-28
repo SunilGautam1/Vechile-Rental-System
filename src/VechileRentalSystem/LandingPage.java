@@ -60,14 +60,14 @@ public class LandingPage {
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(255, 255, 255));
-		panel.setBounds(0, 0, 1591, 859);
+		panel.setBounds(0, 0, 1540, 859);
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("");
 	   Image img = new ImageIcon(this.getClass().getResource("/Screenshot_2023-03-09_at_12.16.png")).getImage();
 		lblNewLabel.setIcon(new ImageIcon(img));
-		lblNewLabel.setBounds(566, 336, 945, 378);
+		lblNewLabel.setBounds(587, 334, 945, 378);
 		panel.add(lblNewLabel);
 		
 		JLabel lblNewLabel_1 = new JLabel("Vehicle for you");
@@ -80,24 +80,9 @@ public class LandingPage {
 		lblNewLabel_1_1.setBounds(100, 206, 487, 100);
 		panel.add(lblNewLabel_1_1);
 		
-		JButton btnNewButton_1 = new JButton("Find your Vehicle");
-		btnNewButton_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				frame.setVisible(false);
-				new GuestDashboard();
-				
-			}
-		});
-		btnNewButton_1.setIcon(new ImageIcon("D:\\COLLEGE\\Sem 4\\Collaborative Development\\project\\New folder\\magnifying-glass.png"));
-		btnNewButton_1.setBounds(new Rectangle(0, 0, 0, 6));
-		btnNewButton_1.setFont(new Font("Nirmala UI Semilight", Font.BOLD, 20));
-		btnNewButton_1.setBackground(new Color(255, 165, 0));
-		btnNewButton_1.setBounds(37, 707, 266, 51);
-		panel.add(btnNewButton_1);
-		
 		JLabel lblNewLabel_2 = new JLabel("Rent Vehicles");
 		lblNewLabel_2.setFont(new Font("Nirmala UI Semilight", Font.BOLD, 20));
-		lblNewLabel_2.setBounds(353, 717, 147, 31);
+		lblNewLabel_2.setBounds(364, 691, 181, 41);
 		panel.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("guaranteed quality.");
@@ -110,15 +95,17 @@ public class LandingPage {
 		lblNewLabel_3_1.setBounds(115, 386, 528, 74);
 		panel.add(lblNewLabel_3_1);
 		
-		JPanel panel_1 = new JPanel();
-		panel_1.setBackground(new Color(173, 216, 230));
-		panel_1.setBounds(0, 0, 1591, 100);
-		panel.add(panel_1);
-		panel_1.setLayout(null);
+		JLabel lblNewLabel_4 = new JLabel("");
+		   Image Button = new ImageIcon(this.getClass().getResource("/button.png")).getImage();
+
+		
+		lblNewLabel_4.setIcon(new ImageIcon(Button));
+		lblNewLabel_4.setBounds(51, 671, 323, 87);
+		panel.add(lblNewLabel_4);
 		
 		JLabel lblNewLabel_2_1 = new JLabel("Log in");
-		lblNewLabel_2_1.setBounds(1311, 33, 93, 31);
-		panel_1.add(lblNewLabel_2_1);
+		lblNewLabel_2_1.setBounds(1378, 36, 105, 41);
+		panel.add(lblNewLabel_2_1);
 		lblNewLabel_2_1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -128,18 +115,12 @@ public class LandingPage {
 		});
 		lblNewLabel_2_1.setFont(new Font("Nirmala UI Semilight", Font.BOLD, 20));
 		
-		JButton btnNewButton = new JButton("Sign Up");
-		btnNewButton.setBounds(1414, 32, 113, 37);
-		panel_1.add(btnNewButton);
-		btnNewButton.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				frame.setVisible(false);
-				new RegisterPage();
-			}
-		});
-		btnNewButton.setBackground(new Color(255, 165, 0));
-		btnNewButton.setFont(new Font("Nirmala UI Semilight", Font.BOLD, 17));
-		Image img2 = new ImageIcon(this.getClass().getResource("/back-button.png")).getImage();
+		JLabel lblNewLabel_5 = new JLabel("");
+		   Image Sign = new ImageIcon(this.getClass().getResource("/Sign in.png")).getImage();
+
+		
+		lblNewLabel_5.setIcon(new ImageIcon(Sign));
+		lblNewLabel_5.setBounds(1240, 23, 128, 74);
+		panel.add(lblNewLabel_5);
 	}
 }

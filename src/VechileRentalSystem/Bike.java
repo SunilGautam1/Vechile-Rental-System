@@ -15,6 +15,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.SystemColor;
 
 public class Bike {
 
@@ -48,56 +49,129 @@ public class Bike {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.getContentPane().setBackground(new Color(173, 216, 230));
+		frame.getContentPane().setBackground(new Color(0, 255, 255));
 		frame.setBounds(0, 00, 1600, 900);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		
-		JPanel panel = new JPanel();
-		panel.setBackground(new Color(255, 255, 255));
-		panel.setBounds(209, 251, 489, 389);
-		frame.getContentPane().add(panel);
-		panel.setLayout(null);
-		Image img = new ImageIcon(this.getClass().getResource("/Bike2.jpeg")).getImage();
-		
-		JLabel lblNewLabel_3 = new JLabel("KTM Duke");
-		lblNewLabel_3.setBackground(new Color(255, 160, 122));
-		lblNewLabel_3.setFont(new Font("Nirmala UI", Font.BOLD, 20));
-		lblNewLabel_3.setBounds(159, 341, 119, 38);
-		panel.add(lblNewLabel_3);
-		
-		JLabel lblNewLabel_7 = new JLabel("");
-		Image img1 = new ImageIcon(this.getClass().getResource("/Bike2.jpeg")).getImage();
-		lblNewLabel_7.setIcon(new ImageIcon(img1));
-		lblNewLabel_7.setBounds(10, 10, 471, 341);
-		panel.add(lblNewLabel_7);
-		Image img3 = new ImageIcon(this.getClass().getResource("/Bike2.jpeg")).getImage();
-		Image img4 = new ImageIcon(this.getClass().getResource("/Bike2.jpeg")).getImage();
-		
-		JButton btnBook = new JButton("View");
-		btnBook.setFont(new Font("Nirmala UI", Font.BOLD, 20));
-		btnBook.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				 
-				 Insidebike insidebike2 = new Insidebike();
-				insidebike2.setVisible(true);
-			}
-		});
-		btnBook.setForeground(new Color(0, 0, 0));
-		btnBook.setBackground(new Color(255, 160, 122));
-		btnBook.setBounds(362, 650, 195, 48);
-		frame.getContentPane().add(btnBook);
 		Image img2 = new ImageIcon(this.getClass().getResource("/back-button.png")).getImage();
 		
-		JPanel panel_5 = new JPanel();
-		panel_5.setBackground(new Color(255, 255, 255));
-		panel_5.setBounds(0, 0, 1586, 78);
-		frame.getContentPane().add(panel_5);
-		panel_5.setLayout(null);
+		JLabel lblNewLabel = new JLabel("Available bikes");
+		lblNewLabel.setBounds(686, 110, 229, 37);
+		frame.getContentPane().add(lblNewLabel);
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 30));
+		
+		JLabel lblNewLabel_2 = new JLabel("");
+		Image Bike = new ImageIcon(this.getClass().getResource("/Bike.png")).getImage();
+
+		lblNewLabel_2.setIcon(new ImageIcon(Bike));
+		lblNewLabel_2.setBounds(208, 342, 306, 262);
+		frame.getContentPane().add(lblNewLabel_2);
+		Image Rectangle = new ImageIcon(this.getClass().getResource("/Rectangle 23.png")).getImage();
+		
+		JLabel lblNewLabel_4 = new JLabel("");
+		Image Frame = new ImageIcon(this.getClass().getResource("/Frame 7.png")).getImage();
+
+		lblNewLabel_4.setIcon(new ImageIcon(Frame));
+		lblNewLabel_4.setBounds(243, 712, 240, 57);
+		frame.getContentPane().add(lblNewLabel_4);
+		
+		JLabel lblNewLabel_2_1 = new JLabel("");
+		Image Duke = new ImageIcon(this.getClass().getResource("/duke 5.png")).getImage();
+
+		lblNewLabel_2_1.setIcon(new ImageIcon(Duke));
+		lblNewLabel_2_1.setBounds(687, 342, 306, 262);
+		frame.getContentPane().add(lblNewLabel_2_1);
+		
+		JLabel lblNewLabel_4_2 = new JLabel("");
+		lblNewLabel_4_2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				frame.setVisible(false);
+				
+			}
+		});
+		lblNewLabel_4_2.setIcon(new ImageIcon(Frame));
+		lblNewLabel_4_2.setBounds(698, 712, 240, 57);
+		frame.getContentPane().add(lblNewLabel_4_2);
+		
+		JLabel lblNewLabel_2_1_3 = new JLabel("");
+		Image Harly = new ImageIcon(this.getClass().getResource("/harly 1.png")).getImage();
+
+		lblNewLabel_2_1_3.setIcon(new ImageIcon(Harly));
+		lblNewLabel_2_1_3.setBounds(1120, 342, 306, 262);
+		frame.getContentPane().add(lblNewLabel_2_1_3);
+		
+		JLabel lblNewLabel_4_2_1 = new JLabel("");
+		lblNewLabel_4_2_1.setIcon(new ImageIcon(Frame));
+		lblNewLabel_4_2_1.setBounds(1172, 712, 240, 57);
+		frame.getContentPane().add(lblNewLabel_4_2_1);
+		
+		JPanel panel = new JPanel();
+		panel.setBounds(-1, 0, 1540, 70);
+		frame.getContentPane().add(panel);
+		panel.setLayout(null);
+		panel.setBackground(SystemColor.menu);
+		
+		JLabel lblNewLabel_5 = new JLabel("Vehicle Rental");
+		lblNewLabel_5.setForeground(Color.BLACK);
+		lblNewLabel_5.setFont(new Font("Nirmala UI Semilight", Font.BOLD, 25));
+		lblNewLabel_5.setBounds(126, 6, 171, 61);
+		panel.add(lblNewLabel_5);
+		
+		JLabel lblNewLabel_8 = new JLabel("logout");
+		lblNewLabel_8.setFont(new Font("Tahoma", Font.PLAIN, 25));
+		lblNewLabel_8.setBounds(1421, 19, 109, 32);
+		panel.add(lblNewLabel_8);
+		
+		JLabel lblNewLabel_2_3 = new JLabel("Category");
+		lblNewLabel_2_3.setFont(new Font("Nirmala UI Semilight", Font.PLAIN, 25));
+		lblNewLabel_2_3.setBounds(365, 21, 109, 29);
+		panel.add(lblNewLabel_2_3);
+		
+		JLabel lblNewLabel_2_1_4 = new JLabel("My Bookings");
+		lblNewLabel_2_1_4.setFont(new Font("Nirmala UI Semilight", Font.PLAIN, 25));
+		lblNewLabel_2_1_4.setBounds(605, 22, 150, 29);
+		panel.add(lblNewLabel_2_1_4);
+		
+		JLabel lblNewLabel_2_1_1_1 = new JLabel("Vehicle");
+		lblNewLabel_2_1_1_1.setFont(new Font("Nirmala UI Semilight", Font.PLAIN, 25));
+		lblNewLabel_2_1_1_1.setBounds(489, 23, 109, 29);
+		panel.add(lblNewLabel_2_1_1_1);
+		
+		JLabel lblNewLabel_6 = new JLabel("Profile");
+		lblNewLabel_6.setFont(new Font("Nirmala UI Semilight", Font.BOLD, 22));
+		lblNewLabel_6.setBounds(1295, 22, 84, 29);
+		panel.add(lblNewLabel_6);
+		
+		JLabel lblNewLabel_3_2 = new JLabel("");
+		Image Icon = new ImageIcon(this.getClass().getResource("/Truck.png")).getImage();
+		lblNewLabel_3_2.setIcon(new ImageIcon(Icon));
+		lblNewLabel_3_2.setBounds(6, 19, 115, 41);
+		panel.add(lblNewLabel_3_2);
+		
+		JLabel lblNewLabel_4_2_2 = new JLabel("");
+		Image Icon1 = new ImageIcon(this.getClass().getResource("/Frame 2.png")).getImage();
+		lblNewLabel_4_2_2.setIcon(new ImageIcon(Icon1));
+		lblNewLabel_4_2_2.setBounds(312, 18, 45, 38);
+		panel.add(lblNewLabel_4_2_2);
+		
+		JLabel lblNewLabel_5_2 = new JLabel("");
+		Image Icon2 = new ImageIcon(this.getClass().getResource("/Vector.png")).getImage();
+		lblNewLabel_5_2.setIcon(new ImageIcon(Icon2));
+		lblNewLabel_5_2.setBounds(1394, 23, 29, 27);
+		panel.add(lblNewLabel_5_2);
+		
+		JLabel lblNewLabel_7 = new JLabel("");
+		Image Icon3 = new ImageIcon(this.getClass().getResource("/user.png")).getImage();
+
+		
+		lblNewLabel_7.setIcon(new ImageIcon(Icon3));
+		lblNewLabel_7.setBounds(1253, 14, 45, 43);
+		panel.add(lblNewLabel_7);
 		
 		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setBounds(10, 32, 49, 32);
-		panel_5.add(lblNewLabel_1);
+		lblNewLabel_1.setBounds(4, 82, 49, 32);
+		frame.getContentPane().add(lblNewLabel_1);
 		lblNewLabel_1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -107,70 +181,41 @@ public class Bike {
 		});
 		lblNewLabel_1.setIcon(new ImageIcon(img2));
 		
-		JLabel lblNewLabel_4_1 = new JLabel("Vehicle Rental");
-		lblNewLabel_4_1.setForeground(Color.BLACK);
-		lblNewLabel_4_1.setFont(new Font("Nirmala UI Semilight", Font.BOLD, 25));
-		lblNewLabel_4_1.setBounds(67, 16, 171, 61);
-		panel_5.add(lblNewLabel_4_1);
+		JLabel lblNewLabel_9 = new JLabel("Hero Honda");
+		lblNewLabel_9.setFont(new Font("Tahoma", Font.BOLD, 40));
+		lblNewLabel_9.setBounds(243, 601, 240, 57);
+		frame.getContentPane().add(lblNewLabel_9);
 		
-		JLabel lblNewLabel_2_2 = new JLabel("Category");
-		lblNewLabel_2_2.setFont(new Font("Nirmala UI Semilight", Font.PLAIN, 25));
-		lblNewLabel_2_2.setBounds(275, 32, 109, 29);
-		panel_5.add(lblNewLabel_2_2);
+		JLabel lblNewLabel_9_1 = new JLabel("Duke");
+		lblNewLabel_9_1.setFont(new Font("Tahoma", Font.BOLD, 40));
+		lblNewLabel_9_1.setBounds(697, 601, 240, 57);
+		frame.getContentPane().add(lblNewLabel_9_1);
 		
-		JLabel lblNewLabel_2_1_1 = new JLabel("Vehicle");
-		lblNewLabel_2_1_1.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				frame.setVisible(true);
-				new Vechile();
-			}
-		});
-		lblNewLabel_2_1_1.setFont(new Font("Nirmala UI Semilight", Font.PLAIN, 25)); // Label 
-		lblNewLabel_2_1_1.setBounds(406, 32, 109, 29);
-		panel_5.add(lblNewLabel_2_1_1);
+		JLabel lblNewLabel_9_1_1 = new JLabel("Harley Davidson");
+		lblNewLabel_9_1_1.setFont(new Font("Tahoma", Font.BOLD, 40));
+		lblNewLabel_9_1_1.setBounds(1130, 601, 358, 57);
+		frame.getContentPane().add(lblNewLabel_9_1_1);
 		
-		JLabel lblNewLabel_2_1_2 = new JLabel("My Bookings"); 					
-		lblNewLabel_2_1_2.setFont(new Font("Nirmala UI Semilight", Font.PLAIN, 25));
-		lblNewLabel_2_1_2.setBounds(530, 32, 150, 29);
-		panel_5.add(lblNewLabel_2_1_2);
+		JLabel lblNewLabel_3 = new JLabel("");
+		Image Rectangle1 = new ImageIcon(this.getClass().getResource("/Rectangle 23.png")).getImage();
+
+		lblNewLabel_3.setIcon(new ImageIcon(Rectangle1));
 		
-		JLabel lblNewLabel = new JLabel("Available bikes");
-		lblNewLabel.setBounds(686, 110, 229, 37);
-		frame.getContentPane().add(lblNewLabel);
-		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 30));
 		
-		JButton btnBook_1 = new JButton("View");
-		btnBook_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				 InsideBike1 insidebike = new InsideBike1();
-				insidebike.setVisible(true);
-			}
-		});
-		btnBook_1.setForeground(new Color(0, 0, 0));
-		btnBook_1.setFont(new Font("Nirmala UI", Font.BOLD, 20));
-		btnBook_1.setBackground(new Color(255, 160, 122));
-		btnBook_1.setBounds(1101, 650, 195, 48);
-		frame.getContentPane().add(btnBook_1);
+		lblNewLabel_3.setBounds(168, 310, 362, 365);
+		frame.getContentPane().add(lblNewLabel_3);
 		
-		JPanel panel_1 = new JPanel();
-		panel_1.setLayout(null);
-		panel_1.setBackground(Color.WHITE);
-		panel_1.setBounds(962, 251, 489, 389);
-		frame.getContentPane().add(panel_1);
+		JLabel lblNewLabel_3_1 = new JLabel("");
+
+		lblNewLabel_3_1.setIcon(new ImageIcon(Rectangle1));
+		lblNewLabel_3_1.setBounds(626, 310, 362, 365);
+		frame.getContentPane().add(lblNewLabel_3_1);
 		
-		JLabel lblNewLabel_3_1 = new JLabel("harley davidson"); // Icon of bike field 
-		lblNewLabel_3_1.setFont(new Font("Nirmala UI", Font.BOLD, 20));
-		lblNewLabel_3_1.setBackground(new Color(255, 160, 122));
-		lblNewLabel_3_1.setBounds(159, 341, 183, 38);
-		panel_1.add(lblNewLabel_3_1);
+		JLabel lblNewLabel_3_3 = new JLabel("");
+		lblNewLabel_3_3.setIcon(new ImageIcon(Rectangle1));
 		
-		JLabel lblNewLabel_7_1 = new JLabel("");
-		Image img9 = new ImageIcon(this.getClass().getResource("/Bike2.1.jpeg")).getImage();
-		lblNewLabel_7_1.setIcon(new ImageIcon(img9));
-		
-		lblNewLabel_7_1.setBounds(10, 10, 469, 341);
-		panel_1.add(lblNewLabel_7_1);
+		lblNewLabel_3_3.setBounds(1106, 310, 362, 365);
+		frame.getContentPane().add(lblNewLabel_3_3);
 		frame.setVisible(true);
 	}
 }

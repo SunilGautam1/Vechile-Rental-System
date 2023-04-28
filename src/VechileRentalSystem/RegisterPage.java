@@ -217,9 +217,9 @@ public class RegisterPage {
 			lblNewLabel_7.setForeground(new Color(0, 0, 0));
 			lblNewLabel_7.setFont(new Font("Tahoma", Font.BOLD, 20));
 			
-			JLabel lblNewLabel = new JLabel("About Us");
+			JLabel lblNewLabel = new JLabel("");
 			lblNewLabel.setFont(new Font("Nirmala UI", Font.BOLD, 30));
-			lblNewLabel.setBounds(113, 123, 45, 13);
+			lblNewLabel.setBounds(0, 0, 890, 831);
 			panel.add(lblNewLabel);
 			
 			JLabel lblNewLabel_3 = new JLabel("About Us");

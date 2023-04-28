@@ -95,7 +95,7 @@ public class LogInPage {
 		JLabel lblNewLabel_2 = new JLabel("");
 		 Image img = new ImageIcon(this.getClass().getResource("/Screenshot_2023-03-09_at_12.16.png")).getImage();
 		lblNewLabel_2.setIcon(new ImageIcon(img));
-		lblNewLabel_2.setBounds(0, 325, 880, 457);
+		lblNewLabel_2.setBounds(0, 325, 908, 457);
 		panel.add(lblNewLabel_2);
 		
 		JLabel lblNewLabel_4_1 = new JLabel("");
@@ -125,7 +125,7 @@ public class LogInPage {
 		JLabel lblNewLabel_5 = new JLabel("Number");
 		lblNewLabel_5.setForeground(new Color(0, 0, 0));
 		lblNewLabel_5.setFont(new Font("Nirmala UI Semilight", Font.BOLD, 30));
-		lblNewLabel_5.setBounds(134, 224, 225, 49);
+		lblNewLabel_5.setBounds(134, 216, 225, 49);
 		panel_1.add(lblNewLabel_5);
 		
 		textField = new JTextField();
@@ -152,17 +152,14 @@ public class LogInPage {
 	                tglbtnNewToggleButton.setVisible(true);
 	                passwordField.setEchoChar((char) 0);
 				
-
-
 		            }
 		        });
 		       
 		        
 		 
 		tglbtnNewToggleButton.setBackground(new Color(192, 192, 192));
-		Image img1 = new ImageIcon(this.getClass().getResource("/eye.png")).getImage();
-		tglbtnNewToggleButton.setIcon(new ImageIcon(img1));
-		tglbtnNewToggleButton.setBounds(494, 401, 33, 25);
+		
+		tglbtnNewToggleButton.setBounds(496, 401, 33, 25);
 		panel_1.add(tglbtnNewToggleButton);
 		
 		JLabel lblNewLabel_6 = new JLabel("Forget Password?");
@@ -247,9 +244,12 @@ public class LogInPage {
 
 		
 		JLabel lblNewLabel_9 = new JLabel("");
-		 Image img4 = new ImageIcon(this.getClass().getResource("/Untitled design (2).png")).getImage();
-		 lblNewLabel_9.setIcon(new ImageIcon(img4));
-		lblNewLabel_9.setBounds(10, 49, 640, 860);
+		   Image Rectangle = new ImageIcon(this.getClass().getResource("/Rectangle 1.png")).getImage();
+
+		lblNewLabel_9.setIcon(new ImageIcon(Rectangle));
+		
+		
+		lblNewLabel_9.setBounds(0, -15, 640, 848);
 		panel_1.add(lblNewLabel_9);
 		
 		

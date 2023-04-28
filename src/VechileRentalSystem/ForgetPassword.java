@@ -79,11 +79,11 @@ public class ForgetPassword {
 		frame.getContentPane().add(textField_2);
 		
 		JLabel lblNewLabel_3 = new JLabel("New label");
-		lblNewLabel_3.setBounds(29, 173, 485, 42);
+		lblNewLabel_3.setBounds(10, 173, 504, 42);
 		frame.getContentPane().add(lblNewLabel_3);
 		
 		JLabel lblNewLabel_3_1 = new JLabel("New label");
-		lblNewLabel_3_1.setBounds(29, 277, 485, 42);
+		lblNewLabel_3_1.setBounds(10, 277, 504, 42);
 		frame.getContentPane().add(lblNewLabel_3_1);
 		
 		JLabel lblNewLabel_3_2 = new JLabel("New label");

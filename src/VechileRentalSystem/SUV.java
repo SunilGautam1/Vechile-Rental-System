@@ -9,14 +9,11 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
-public class Car {
+public class SUV {
 
 	private JFrame frame;
 
@@ -27,7 +24,7 @@ public class Car {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Car window = new Car();
+					SUV window = new SUV();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -39,7 +36,7 @@ public class Car {
 	/**
 	 * Create the application.
 	 */
-	public Car() {
+	public SUV() {
 		initialize();
 	}
 
@@ -52,16 +49,16 @@ public class Car {
 		frame.setBounds(0, 0, 1600, 900);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		JLabel lblNewLabel = new JLabel("Available Sedan");
+		JLabel lblNewLabel = new JLabel("Available SUV");
 		lblNewLabel.setBounds(686, 110, 267, 37);
 		frame.getContentPane().add(lblNewLabel);
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 30));
 		
 		JLabel lblNewLabel_2 = new JLabel("");
-		Image Bike = new ImageIcon(this.getClass().getResource("/Car.png")).getImage();
+		Image Bike = new ImageIcon(this.getClass().getResource("/SUV1.png")).getImage();
 
 		lblNewLabel_2.setIcon(new ImageIcon(Bike));
-		lblNewLabel_2.setBounds(55, 312, 475, 262);
+		lblNewLabel_2.setBounds(115, 310, 475, 262);
 		frame.getContentPane().add(lblNewLabel_2);
 		Image Rectangle = new ImageIcon(this.getClass().getResource("/Rectangle 23.png")).getImage();
 		
@@ -73,10 +70,10 @@ public class Car {
 		frame.getContentPane().add(lblNewLabel_4);
 		
 		JLabel lblNewLabel_2_1 = new JLabel("");
-		Image Duke = new ImageIcon(this.getClass().getResource("/Car1.png")).getImage();
+		Image Duke = new ImageIcon(this.getClass().getResource("/SUV1.png")).getImage();
 
 		lblNewLabel_2_1.setIcon(new ImageIcon(Duke));
-		lblNewLabel_2_1.setBounds(626, 330, 347, 262);
+		lblNewLabel_2_1.setBounds(568, 329, 457, 262);
 		frame.getContentPane().add(lblNewLabel_2_1);
 		
 		JLabel lblNewLabel_4_2 = new JLabel("");
@@ -92,10 +89,10 @@ public class Car {
 		frame.getContentPane().add(lblNewLabel_4_2);
 		
 		JLabel lblNewLabel_2_1_3 = new JLabel("");
-		Image Harly = new ImageIcon(this.getClass().getResource("/Car3.png")).getImage();
+		Image Harly = new ImageIcon(this.getClass().getResource("/SUV3.png")).getImage();
 
 		lblNewLabel_2_1_3.setIcon(new ImageIcon(Harly));
-		lblNewLabel_2_1_3.setBounds(1120, 342, 332, 262);
+		lblNewLabel_2_1_3.setBounds(1001, 255, 478, 317);
 		frame.getContentPane().add(lblNewLabel_2_1_3);
 		
 		JLabel lblNewLabel_4_2_1 = new JLabel("");
@@ -215,7 +212,5 @@ public class Car {
 		frame.getContentPane().add(lblNewLabel_3_3);
 		frame.setVisible(true);
 	}
-	}
-		
-		
 
+}
