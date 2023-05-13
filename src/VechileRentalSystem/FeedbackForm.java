@@ -106,7 +106,7 @@ public class FeedbackForm extends JFrame implements ActionListener {
         }
     }
 
-    private void submitFeedback() {
+    private void submitFeedback() {   // function submitFeedback
         int rating = getSelectedRating();
         String feedback = feedbackTextField.getText().trim();
 
