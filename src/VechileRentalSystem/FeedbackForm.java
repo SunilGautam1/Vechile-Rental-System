@@ -140,7 +140,7 @@ public class FeedbackForm extends JFrame implements ActionListener {
 
     }
 
-    private int getSelectedRating() {
+    private int getSelectedRating() { //function getselectionRating
         for (int i = 0; i < ratingButtons.length; i++) {
             if (ratingButtons[i].isSelected()) {
                 return i + 1;
