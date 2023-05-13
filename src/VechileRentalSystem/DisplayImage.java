@@ -23,7 +23,7 @@ public class DisplayImage {
         frame.getContentPane().add(label, BorderLayout.CENTER);
 
         try {
-            // Connect to database
+            // Connection to database
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/OurSystem", "root", "sunil123");
 
             // Query to fetch image
