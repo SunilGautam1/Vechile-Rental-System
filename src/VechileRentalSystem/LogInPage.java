@@ -177,7 +177,7 @@ public class LogInPage {
 				else if(comboBox.getSelectedIndex()==2) {
 					if(LoginPageDatabase.LoginPageDatabaseAdmincheck(phoneNumber, passwordString)) {
 						ProfileDatabase.profiledata(phoneNumber,passwordString);
-						JOptionPane.showMessageDialog(null, "Logged In Successfully as  " + option, "Success", JOptionPane.INFORMATION_MESSAGE);
+						JOptionPane.showMessageDialog(null, "Logged In Successfully as  " + option, "Success", JOptionPane.INFORMATION_MESSAGE); // message
 						frame.setVisible(false);
 						new AdminDashBoard();
 						
