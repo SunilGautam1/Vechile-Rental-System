@@ -223,7 +223,7 @@ public class ProfileUpdate {
 				
 				try {
 					Class.forName("com.mysql.cj.jdbc.Driver");  
-					Connection Connect = DriverManager.getConnection(url,username,password); //connection to Drivermanager
+					Connection Connect = DriverManager.getConnection(url,username,password); //connection to Drivermanagerrr
 			 
 				 
 					 String query = "UPDATE UserDetails SET Full_Name = ?, Username = ?, Email = ?, Phone_Number = ? WHERE Phone_Number = ?";
@@ -233,7 +233,7 @@ public class ProfileUpdate {
 			            statement.setString(3, Email);
 			            statement.setString(4, Phone);
 			            
-			            statement.setString(5, ProfileDatabase.Phonenumber);
+			            statement.setString(5, ProfileDatabase.Phonenumber); //statement
 			            
 			            int rowsUpdated = statement.executeUpdate();
 			            System.out.println(rowsUpdated + " rows updated.");
