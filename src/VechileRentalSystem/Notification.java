@@ -235,7 +235,7 @@ Image img2 = new ImageIcon(this.getClass().getResource("/back-button.png")).getI
       		            
       		            	
 
-      		                // Iterate through the result set and create a notification panel for each row
+      		                // Iterating through the result set and create a notification panel for each row
       		                while (rs.next()) {
       		                	 byte[] imageData1 = rs.getBytes("ScreenShot");
 
