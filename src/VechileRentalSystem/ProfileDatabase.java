@@ -29,21 +29,20 @@ public static void profiledata(String phonenumber,String Password){
 			Connection Connect = DriverManager.getConnection(url1,username,password); // connected to Drivermanager
 	 
 		 
-	      PreparedStatement stmt = Connect.prepareStatement("SELECT Phone_Number, Full_Name,Username, email, password FROM UserDetails WHERE Phone_Number = ?");
+	      PreparedStatement stmt = Connect.prepareStatement("SELECT *FROM UserDetails WHERE Phone_Number = ?");
 	      stmt.setString(1, phonenumber);
 	      ResultSet rs = stmt.executeQuery();
 
 	      // Compare the password provided by the user with the one retrieved from the database
 	      if (rs.next()) {
-	        String passwordFromDb = rs.getString("password");
-	        if (Password.equals(passwordFromDb)) {
+	       
 	          // If the passwords match, return the other data
 	          Phonenumber = rs.getString("Phone_Number");
 	           Secondname = rs.getString("Full_Name");
 	           Username = rs.getString("Username");
 	           Email = rs.getString("Email");
 	           
-	           System.out.println(Phonenumber);
+	           
 	          
 	          
 	          
@@ -51,7 +50,7 @@ public static void profiledata(String phonenumber,String Password){
 			    
 			
 				
-			    } 
+			    
 	    
 	      
 	      }

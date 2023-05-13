@@ -32,6 +32,7 @@ public class RegisterPage {
 	private JTextField textField_2;
 	private JPasswordField passwordField;
 	private JPasswordField passwordField_1;
+	static String phonenumber;
 
 	/**
 	 * Launch the application.
@@ -76,6 +77,7 @@ public class RegisterPage {
 		
 			
 			JPanel panel_1 = new JPanel();
+			panel_1.setForeground(new Color(255, 0, 0));
 			panel_1.setBounds(917, 0, 659, 859);
 			panel.add(panel_1);
 			panel_1.setBackground(new Color(255, 255, 255));
@@ -123,8 +125,10 @@ public class RegisterPage {
 			
 			JButton btnRegister = new JButton("Register");
 			btnRegister.addActionListener(new ActionListener() {
+				
+
 				public void actionPerformed(ActionEvent e) {
-					String phonenumber = textField.getText();
+					 phonenumber = textField.getText();
 					String fullname = textField_1.getText();
 					String Email = textField_2.getText();
 					char[] password = passwordField.getPassword();
@@ -150,7 +154,7 @@ public class RegisterPage {
 						  
 					     JOptionPane.showMessageDialog(null, "Form Submitted Successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
 					     frame.setVisible(false);
-						  new LogInPage();
+						  new RegistrationQuestion();
                          
 					  }	
 						if(RegistrationValidation.validateName(fullname) && RegistrationValidation.validateEmail(Email) && 
@@ -217,6 +221,12 @@ public class RegisterPage {
 			lblNewLabel_7.setForeground(new Color(0, 0, 0));
 			lblNewLabel_7.setFont(new Font("Tahoma", Font.BOLD, 20));
 			
+			JLabel lblNewLabel_5 = new JLabel("Password Must Contain Upper Case letter , number and special Letter, Minimum 4 Letter");
+			lblNewLabel_5.setForeground(new Color(255, 0, 0));
+			lblNewLabel_5.setBackground(new Color(255, 0, 0));
+			lblNewLabel_5.setBounds(77, 466, 514, 23);
+			panel_1.add(lblNewLabel_5);
+			
 			JLabel lblNewLabel = new JLabel("");
 			lblNewLabel.setFont(new Font("Nirmala UI", Font.BOLD, 30));
 			lblNewLabel.setBounds(0, 0, 890, 831);
@@ -230,8 +240,15 @@ public class RegisterPage {
 			JTextPane txtpnLoremIpsumDolor = new JTextPane();
 			txtpnLoremIpsumDolor.setBackground(new Color(173, 216, 230));
 			txtpnLoremIpsumDolor.setFont(new Font("Nirmala UI Semilight", Font.PLAIN, 25));
-			txtpnLoremIpsumDolor.setText("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eleifend egestas porta. Pellentesque nisi massa, tincidunt quis posuere sed, tempus at orci. Morbi vitae egestas enim, sit amet porttitor elit. Morbi pharetra ornare velit sed cursus. Aenean viverra, massa sed interdum pretium, felis erat mollis nunc, vitae varius ex justo nec elit. Nunc porttitor egestas dapibus. Praesent sit amet tortor eget quam consequat malesuada vel quis lectus. Nulla facilisi. Aenean eros erat, lobortis in auctor vitae, tincidunt vitae neque. Phasellus mi sem, cursus sit amet justo id, iaculis faucibus ex.");
-			txtpnLoremIpsumDolor.setBounds(51, 234, 736, 356);
+			txtpnLoremIpsumDolor.setText("This vehicle rental system facilitates and provides a\r\n"
+					+ "service to the people willing to rent vehicles for their purpose. People will\r\n"
+					+ "be able to rent different vehicles such as cars, bikes, cycles etc. The system\r\n"
+					+ "will address various business needs such as improving the customer experience\r\n"
+					+ "by providing an easy online platform for booking and renting vehicles,\r\n"
+					+ "increasing efficiency by automating rental processes, enhancing fleet management\r\n"
+					+ "by enabling tracking and optimization of vehicle usage, and increasing revenue\r\n"
+					+ "by offering a wider range of vehicles and rental options..");
+			txtpnLoremIpsumDolor.setBounds(51, 234, 736, 580);
 			panel.add(txtpnLoremIpsumDolor);
 			Image img = new ImageIcon(this.getClass().getResource("/Screenshot_2023-03-09_at_12.16.png")).getImage();
 	}

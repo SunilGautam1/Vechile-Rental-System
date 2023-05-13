@@ -15,9 +15,12 @@ public class second extends JFrame {
     public second() {
         setTitle("Image Uploader");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLayout(new FlowLayout());
+        getContentPane().setLayout(new FlowLayout());
 
         uploadButton = new JButton("Upload Image");
+        uploadButton.setBackground(new Color(255, 255, 255));
+        uploadButton.setVerticalAlignment(SwingConstants.TOP);
+        uploadButton.setFont(new Font("Tahoma", Font.PLAIN, 22));
         uploadButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 JFileChooser fileChooser = new JFileChooser();
@@ -40,8 +43,8 @@ public class second extends JFrame {
         imageLabel = new JLabel();
         imageLabel.setPreferredSize(new Dimension(300, 300));
 
-        add(uploadButton);
-        add(imageLabel);
+        getContentPane().add(uploadButton);
+        getContentPane().add(imageLabel);
 
         pack();
         setLocationRelativeTo(null);

@@ -3,17 +3,25 @@ package VechileRentalSystem;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
+import javax.swing.JPanel;
+import java.awt.Color;
 import javax.swing.JLabel;
 import java.awt.Font;
-import javax.swing.JComboBox;
-import javax.swing.JTextField;
+import java.awt.Image;
 
-public class ForgetPassword {
+import javax.swing.JTextField;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.ActionEvent;
+
+public class forgetpassword {
 
 	private JFrame frame;
 	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
+	static String Number;
 
 	/**
 	 * Launch the application.
@@ -22,7 +30,7 @@ public class ForgetPassword {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					ForgetPassword window = new ForgetPassword();
+					forgetpassword window = new forgetpassword();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -34,7 +42,7 @@ public class ForgetPassword {
 	/**
 	 * Create the application.
 	 */
-	public ForgetPassword() {
+	public forgetpassword() {
 		initialize();
 	}
 
@@ -43,51 +51,61 @@ public class ForgetPassword {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(500, 100, 600, 600);
+		frame.getContentPane().setBackground(new Color(128, 255, 255));
+		frame.setBounds(300, 100, 986, 662);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		frame.setVisible(true);
 		
-		JLabel lblNewLabel = new JLabel("Forget Password");
-		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 30));
-		lblNewLabel.setBounds(0, 0, 256, 42);
-		frame.getContentPane().add(lblNewLabel);
+Image img2 = new ImageIcon(this.getClass().getResource("/back-button.png")).getImage();
 		
-		JLabel lblNewLabel_1 = new JLabel("Verify its you");
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNewLabel_1.setBounds(172, 68, 296, 29);
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setBounds(4, 82, 49, 32);
 		frame.getContentPane().add(lblNewLabel_1);
+		lblNewLabel_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				frame.setVisible(false);
+				
+			}
+		});
+		lblNewLabel_1.setIcon(new ImageIcon(img2));
 		
-		JLabel lblNewLabel_2 = new JLabel("Answer the 3 Question");
-		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		lblNewLabel_2.setBounds(126, 122, 388, 29);
-		frame.getContentPane().add(lblNewLabel_2);
+		JPanel panel = new JPanel();
+		panel.setBounds(90, 115, 754, 424);
+		frame.getContentPane().add(panel);
+		panel.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("Enter Your Phone Number");
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		lblNewLabel.setBounds(159, 115, 468, 90);
+		panel.add(lblNewLabel);
 		
 		textField = new JTextField();
-		textField.setBounds(130, 232, 229, 35);
-		frame.getContentPane().add(textField);
+		textField.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		textField.setBounds(232, 190, 251, 39);
+		panel.add(textField);
 		textField.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(130, 351, 229, 35);
-		frame.getContentPane().add(textField_1);
+		JButton btnNewButton = new JButton("Continue");
+		btnNewButton.setBackground(new Color(255, 255, 255));
+		btnNewButton.addActionListener(new ActionListener() {
+			
+
+			public void actionPerformed(ActionEvent e) {
+				 Number = textField.getText();
+				 
+				 frame.setVisible(false);
+				 new Check();
+			}
+		});
+		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnNewButton.setBounds(286, 315, 176, 39);
+		panel.add(btnNewButton);
 		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(130, 477, 229, 35);
-		frame.getContentPane().add(textField_2);
-		
-		JLabel lblNewLabel_3 = new JLabel("New label");
-		lblNewLabel_3.setBounds(10, 173, 504, 42);
-		frame.getContentPane().add(lblNewLabel_3);
-		
-		JLabel lblNewLabel_3_1 = new JLabel("New label");
-		lblNewLabel_3_1.setBounds(10, 277, 504, 42);
-		frame.getContentPane().add(lblNewLabel_3_1);
-		
-		JLabel lblNewLabel_3_2 = new JLabel("New label");
-		lblNewLabel_3_2.setBounds(29, 410, 485, 42);
-		frame.getContentPane().add(lblNewLabel_3_2);
+		JLabel lblNewLabel_11 = new JLabel("Forget Password");
+		lblNewLabel_11.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		lblNewLabel_11.setBounds(105, 32, 573, 109);
+		frame.getContentPane().add(lblNewLabel_11);
 	}
 }

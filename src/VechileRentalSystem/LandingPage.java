@@ -96,6 +96,13 @@ public class LandingPage {
 		panel.add(lblNewLabel_3_1);
 		
 		JLabel lblNewLabel_4 = new JLabel("");
+		lblNewLabel_4.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				frame.setVisible(false);
+				new GuestDashBoard();
+			}
+		});
 		   Image Button = new ImageIcon(this.getClass().getResource("/button.png")).getImage();
 
 		
@@ -116,6 +123,13 @@ public class LandingPage {
 		lblNewLabel_2_1.setFont(new Font("Nirmala UI Semilight", Font.BOLD, 20));
 		
 		JLabel lblNewLabel_5 = new JLabel("");
+		lblNewLabel_5.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				frame.setVisible(false);
+				new RegisterPage();
+			}
+		});
 		   Image Sign = new ImageIcon(this.getClass().getResource("/Sign in.png")).getImage();
 
 		

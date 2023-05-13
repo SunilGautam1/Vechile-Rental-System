@@ -16,13 +16,13 @@ public class onelast extends JFrame implements ActionListener {
 
         // Create the ellipse panel and add it to the frame
         ellipsePanel = new EllipsePanel();
-        add(ellipsePanel, BorderLayout.CENTER);
+        getContentPane().add(ellipsePanel, BorderLayout.SOUTH);
 
         // Create the button and file chooser and add them to the frame
         chooseButton = new JButton("Choose File");
+        ellipsePanel.add(chooseButton);
         chooseButton.addActionListener(this);
         fileChooser = new JFileChooser();
-        add(chooseButton, BorderLayout.SOUTH);
 
         // Set the frame properties
         setSize(400, 400);

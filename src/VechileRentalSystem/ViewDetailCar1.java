@@ -1,12 +1,15 @@
 package VechileRentalSystem;
 
 import java.awt.Color;
+
 import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.Image;
 import java.awt.SystemColor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -16,8 +19,9 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.SwingConstants;
 
-public class ViewDetailCar1 {
+public class ViewDetailCar1  {
 
 	private JFrame frame;
 
@@ -55,6 +59,20 @@ public class ViewDetailCar1 {
 		frame.getContentPane().setLayout(null);
 		frame.setVisible(true);
 		
+		Image img2 = new ImageIcon(this.getClass().getResource("/back-button.png")).getImage();
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setBounds(4, 82, 49, 32);
+		frame.getContentPane().add(lblNewLabel_1);
+		lblNewLabel_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				frame.setVisible(false);
+				new Bike();
+				
+			}
+		});
+		lblNewLabel_1.setIcon(new ImageIcon(img2));
+		
 		JPanel panel = new JPanel();
 		panel.setBounds(-1, 0, 1540, 70);
 		frame.getContentPane().add(panel);
@@ -68,76 +86,103 @@ public class ViewDetailCar1 {
 		panel.add(lblNewLabel_51);
 		
 		JLabel lblNewLabel_8 = new JLabel("logout");
+		lblNewLabel_8.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				frame.setVisible(false);
+				new LogInPage();
+			}
+		});
 		lblNewLabel_8.setFont(new Font("Tahoma", Font.PLAIN, 25));
 		lblNewLabel_8.setBounds(1421, 19, 109, 32);
 		panel.add(lblNewLabel_8);
 		
-		JLabel lblNewLabel_2_3 = new JLabel("Category");
-		lblNewLabel_2_3.setFont(new Font("Nirmala UI Semilight", Font.PLAIN, 25));
-		lblNewLabel_2_3.setBounds(365, 21, 109, 29);
-		panel.add(lblNewLabel_2_3);
-		
 		JLabel lblNewLabel_2_1_4 = new JLabel("My Bookings");
+		lblNewLabel_2_1_4.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				frame.setVisible(true);
+				new Notification();
+				
+			}
+		});
 		lblNewLabel_2_1_4.setFont(new Font("Nirmala UI Semilight", Font.PLAIN, 25));
-		lblNewLabel_2_1_4.setBounds(605, 22, 150, 29);
+		lblNewLabel_2_1_4.setBounds(683, 3, 150, 67);
 		panel.add(lblNewLabel_2_1_4);
-		
-		JLabel lblNewLabel_2_1_1_1 = new JLabel("Vehicle");
-		lblNewLabel_2_1_1_1.setFont(new Font("Nirmala UI Semilight", Font.PLAIN, 25));
-		lblNewLabel_2_1_1_1.setBounds(489, 23, 109, 29);
-		panel.add(lblNewLabel_2_1_1_1);
-		
-		JLabel lblNewLabel_6 = new JLabel("Profile");
-		lblNewLabel_6.setFont(new Font("Nirmala UI Semilight", Font.BOLD, 22));
-		lblNewLabel_6.setBounds(1295, 22, 84, 29);
-		panel.add(lblNewLabel_6);
 		
 		JLabel lblNewLabel_3_2 = new JLabel("");
 		Image Icon = new ImageIcon(this.getClass().getResource("/Truck.png")).getImage();
 		lblNewLabel_3_2.setIcon(new ImageIcon(Icon));
 		lblNewLabel_3_2.setBounds(6, 19, 115, 41);
 		panel.add(lblNewLabel_3_2);
-		
-		JLabel lblNewLabel_4_2_2 = new JLabel("");
-		Image Icon1 = new ImageIcon(this.getClass().getResource("/Frame 2.png")).getImage();
-		lblNewLabel_4_2_2.setIcon(new ImageIcon(Icon1));
-		lblNewLabel_4_2_2.setBounds(312, 18, 45, 38);
-		panel.add(lblNewLabel_4_2_2);
+	
 		
 		JLabel lblNewLabel_5_2 = new JLabel("");
+		lblNewLabel_5_2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				frame.setVisible(false);
+				new LogInPage();
+			}
+		});
 		Image Icon2 = new ImageIcon(this.getClass().getResource("/Vector.png")).getImage();
 		lblNewLabel_5_2.setIcon(new ImageIcon(Icon2));
-		lblNewLabel_5_2.setBounds(1394, 23, 29, 27);
+		lblNewLabel_5_2.setBounds(1394, 19, 29, 37);
 		panel.add(lblNewLabel_5_2);
 		
 		JLabel lblNewLabel_7 = new JLabel("");
+		lblNewLabel_7.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			    frame.setVisible(true);	
+			    new ProfileSetting();
+			    }
+		});
 		Image Icon3 = new ImageIcon(this.getClass().getResource("/user.png")).getImage();
 
 		
 		lblNewLabel_7.setIcon(new ImageIcon(Icon3));
-		lblNewLabel_7.setBounds(1253, 14, 45, 43);
+		lblNewLabel_7.setBounds(531, 6, 35, 57);
 		panel.add(lblNewLabel_7);
 		
+		JLabel lblNewLabel_6 = new JLabel("Profile");
+		lblNewLabel_6.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				frame.setVisible(true);	
+			    new ProfileSetting();
+			}
+		});
+		lblNewLabel_6.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_6.setBounds(553, 5, 123, 64);
+		panel.add(lblNewLabel_6);
+		lblNewLabel_6.setFont(new Font("Nirmala UI Semilight", Font.BOLD, 22));
+		
+		JLabel lblNewLabel_2_1_4_1 = new JLabel("History");
+		lblNewLabel_2_1_4_1.setFont(new Font("Nirmala UI Semilight", Font.PLAIN, 25));
+		lblNewLabel_2_1_4_1.setBounds(864, 3, 164, 67);
+		panel.add(lblNewLabel_2_1_4_1);
 		JPanel panel_1 = new JPanel();
 		panel_1.setBounds(139, 147, 1278, 629);
 		frame.getContentPane().add(panel_1);
 		panel_1.setLayout(null);
 		
-		JLabel lblNewLabel_1 = new JLabel("");
-		Image Duke = new ImageIcon(this.getClass().getResource("/duke 5 (1).png")).getImage();
-
+		JLabel lblNewLabel_11 = new JLabel("" );
+		ImageIcon imageIcon = new ImageIcon(Bike.image);
+		ImageIcon resizedImageIcon = new ImageIcon(imageIcon.getImage().getScaledInstance(600, 480, Image.SCALE_SMOOTH));
+		lblNewLabel_11.setIcon(resizedImageIcon);
 		
-		lblNewLabel_1.setBounds(31, 83, 661, 480);
-		panel_1.add(lblNewLabel_1);
-		lblNewLabel_1.setIcon(new ImageIcon(Duke));
+		lblNewLabel_11.setBounds(36, 67, 661, 480);
+		panel_1.add(lblNewLabel_11);
+		
 		
 		JLabel lblNewLabel_6_1 = new JLabel("Description");
-		lblNewLabel_6_1.setBounds(731, 83, 159, 50);
+		lblNewLabel_6_1.setBounds(731, 52, 159, 50);
 		panel_1.add(lblNewLabel_6_1);
 		lblNewLabel_6_1.setFont(new Font("Nirmala UI", Font.BOLD, 25));
 		
-		JLabel lblNewLabel_2_1_1_11 = new JLabel("KTM DUKE");
-		lblNewLabel_2_1_1_11.setBounds(755, 130, 171, 29);
+		JLabel lblNewLabel_2_1_1_11 = new JLabel(Bike.vehicle_name);
+		lblNewLabel_2_1_1_11.setBounds(756, 92, 270, 40);
 		panel_1.add(lblNewLabel_2_1_1_11);
 		lblNewLabel_2_1_1_11.setFont(new Font("Nirmala UI Semilight", Font.PLAIN, 25));
 		
@@ -146,42 +191,41 @@ public class ViewDetailCar1 {
 		panel_1.add(lblNewLabel_6_1_1);
 		lblNewLabel_6_1_1.setFont(new Font("Nirmala UI", Font.BOLD, 25));
 		
-		JLabel lblNewLabel_2_1_1_1_1 = new JLabel("Engine Typpe : Single Cylinder,liquid Cooled");
-		lblNewLabel_2_1_1_1_1.setBounds(755, 302, 512, 29);
+		JLabel lblNewLabel_2_1_1_1_1 = new JLabel("Price :  " +Bike.Price);
+		lblNewLabel_2_1_1_1_1.setBounds(756, 386, 512, 29);
 		panel_1.add(lblNewLabel_2_1_1_1_1);
 		lblNewLabel_2_1_1_1_1.setFont(new Font("Nirmala UI Semilight", Font.PLAIN, 25));
 		
-		JLabel lblNewLabel_2_1_1_1_1_1 = new JLabel("Displacement : 199.5 CC");
-		lblNewLabel_2_1_1_1_1_1.setBounds(752, 263, 270, 29);
+		JLabel lblNewLabel_2_1_1_1_1_1 = new JLabel("Displacement : " +  Bike.Displacement);
+		lblNewLabel_2_1_1_1_1_1.setBounds(756, 306, 270, 29);
 		panel_1.add(lblNewLabel_2_1_1_1_1_1);
 		lblNewLabel_2_1_1_1_1_1.setFont(new Font("Nirmala UI Semilight", Font.PLAIN, 25));
 		
-		JLabel lblNewLabel_2_1_1_1_1_2 = new JLabel("Mileage: 33kmpl");
-		lblNewLabel_2_1_1_1_1_2.setBounds(755, 228, 203, 29);
+		JLabel lblNewLabel_2_1_1_1_1_2 = new JLabel("Mileage:  " + Bike.mileage);
+		lblNewLabel_2_1_1_1_1_2.setBounds(755, 228, 340, 29);
 		panel_1.add(lblNewLabel_2_1_1_1_1_2);
 		lblNewLabel_2_1_1_1_1_2.setFont(new Font("Nirmala UI Semilight", Font.PLAIN, 25));
 		
-		JLabel lblNewLabel_2_1_1_1_1_2_1 = new JLabel("No. of Cylinders: 1");
+		JLabel lblNewLabel_2_1_1_1_1_2_1 = new JLabel("Fuel Capacity : "  + Bike.Fuel_Capacity);
 		lblNewLabel_2_1_1_1_1_2_1.setFont(new Font("Nirmala UI Semilight", Font.PLAIN, 25));
-		lblNewLabel_2_1_1_1_1_2_1.setBounds(755, 337, 294, 29);
+		lblNewLabel_2_1_1_1_1_2_1.setBounds(756, 267, 294, 29);
 		panel_1.add(lblNewLabel_2_1_1_1_1_2_1);
 		
-		JLabel lblNewLabel_2_1_1_1_1_2_1_1 = new JLabel("Max Power25 PS @10,000 rpm");
+		JLabel lblNewLabel_2_1_1_1_1_2_1_1 = new JLabel("Company Name : " +  Bike.Company_Name );
 		lblNewLabel_2_1_1_1_1_2_1_1.setFont(new Font("Nirmala UI Semilight", Font.PLAIN, 25));
-		lblNewLabel_2_1_1_1_1_2_1_1.setBounds(755, 376, 474, 29);
+		lblNewLabel_2_1_1_1_1_2_1_1.setBounds(755, 345, 474, 29);
 		panel_1.add(lblNewLabel_2_1_1_1_1_2_1_1);
 		
-		JLabel lblNewLabel_2_1_1_1_1_2_1_1_1 = new JLabel("Max Torque:19.3 Nm @ 8000 rpm");
-		lblNewLabel_2_1_1_1_1_2_1_1_1.setFont(new Font("Nirmala UI Semilight", Font.PLAIN, 25));
-		lblNewLabel_2_1_1_1_1_2_1_1_1.setBounds(755, 410, 474, 29);
-		panel_1.add(lblNewLabel_2_1_1_1_1_2_1_1_1);
-		
 		JButton btnNewButton = new JButton("Book");
-		if(status().equals("Booked")) {
+		if(Bike.Status .equals("Booked")) {
 			btnNewButton.setEnabled(false);
 		}
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				frame.setVisible(false);
+				new ConfirmBookingPage();
+				
+				
 			}
 		});
 		btnNewButton.setFont(new Font("Nirmala UI Semilight", Font.PLAIN, 20));
@@ -189,33 +233,20 @@ public class ViewDetailCar1 {
 		btnNewButton.setBounds(876, 521, 146, 42);
 		panel_1.add(btnNewButton);
 		
-		JLabel lblNewLabel_2_1_1_1_1_2_1_1_1_1 = new JLabel("Status:       "       + status());
+		JLabel lblNewLabel_2_1_1_1_1_2_1_1_1_1 = new JLabel("Status : "  + Bike.Status     );
 		lblNewLabel_2_1_1_1_1_2_1_1_1_1.setFont(new Font("Nirmala UI Semilight", Font.PLAIN, 25));
-		lblNewLabel_2_1_1_1_1_2_1_1_1_1.setBounds(755, 449, 474, 29);
+		lblNewLabel_2_1_1_1_1_2_1_1_1_1.setBounds(756, 425, 474, 29);
 		panel_1.add(lblNewLabel_2_1_1_1_1_2_1_1_1_1);
 		
-	}
-	
-	public static String status(){
-	    String url= "jdbc:mysql://localhost:3306/Oursystem";
-	    String username = "root";
-	    String password = "sunil123";
-	    String status = "";
-	    try {
-	        Class.forName("com.mysql.cj.jdbc.Driver");
-	        Connection Connect = DriverManager.getConnection(url,username,password);
-	        java.sql.Statement stmt = Connect.createStatement();
-	        String vechileNumber = "BA25LA";
-	        String statusQuery = "SELECT status FROM Vechile WHERE VechileNumber = '" + vechileNumber + "'";
-	        ResultSet resultSet = stmt.executeQuery(statusQuery);
-	        while (resultSet.next()) {
-	            status = resultSet.getString("status");
-	        } 
-	    } catch (Exception e) {
-	        System.out.println(e);
-	    }
-	    return status;
-	}
-
+		JLabel lblNewLabel_2_1_1_1_1_3 = new JLabel(Bike.vehicle_number);
+		lblNewLabel_2_1_1_1_1_3.setFont(new Font("Nirmala UI Semilight", Font.PLAIN, 25));
+		lblNewLabel_2_1_1_1_1_3.setBounds(744, 141, 256, 29);
+		panel_1.add(lblNewLabel_2_1_1_1_1_3);
 		
+		JLabel lblNewLabel_2_1_1_1_1_2_1_1_1_1_1 = new JLabel("Pick Up Loaction: Naxal Moto Shop");
+		lblNewLabel_2_1_1_1_1_2_1_1_1_1_1.setFont(new Font("Nirmala UI Semilight", Font.PLAIN, 25));
+		lblNewLabel_2_1_1_1_1_2_1_1_1_1_1.setBounds(756, 464, 474, 29);
+		panel_1.add(lblNewLabel_2_1_1_1_1_2_1_1_1_1_1);
+		
+	}
 }

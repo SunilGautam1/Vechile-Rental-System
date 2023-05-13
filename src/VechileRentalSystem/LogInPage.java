@@ -30,6 +30,8 @@ public class LogInPage {
 	private JFrame frame;
 	private JTextField textField;
 	private JPasswordField passwordField;
+	private JToggleButton tglbtnNewToggleButton;
+	private JToggleButton tglbtnNewToggleButton_1;
 
 	/**
 	 * Launch the application.
@@ -144,34 +146,13 @@ public class LogInPage {
 		passwordField.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		passwordField.setBounds(134, 385, 361, 41);
 		panel_1.add(passwordField);
-		
-		JToggleButton tglbtnNewToggleButton = new JToggleButton("");
-		tglbtnNewToggleButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				  tglbtnNewToggleButton.setVisible(false);
-	                tglbtnNewToggleButton.setVisible(true);
-	                passwordField.setEchoChar((char) 0);
-				
-		            }
-		        });
-		       
-		        
-		 
-		tglbtnNewToggleButton.setBackground(new Color(192, 192, 192));
-		
-		tglbtnNewToggleButton.setBounds(496, 401, 33, 25);
-		panel_1.add(tglbtnNewToggleButton);
-		
-		JLabel lblNewLabel_6 = new JLabel("Forget Password?");
-		lblNewLabel_6.setForeground(new Color(0, 0, 0));
-		lblNewLabel_6.setFont(new Font("Nirmala UI Semilight", Font.PLAIN, 20));
-		lblNewLabel_6.setBounds(329, 425, 189, 41);
-		panel_1.add(lblNewLabel_6);
+         
 		
 		JComboBox comboBox = new JComboBox();
+		comboBox.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		comboBox.setBackground(new Color(255, 255, 255));
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Please Select", "User ", "Admin"}));
-		comboBox.setBounds(250, 515, 109, 29);
+		comboBox.setBounds(247, 493, 198, 41);
 		panel_1.add(comboBox);
 		
 		JButton btnNewButton = new JButton("Login");
@@ -196,9 +177,9 @@ public class LogInPage {
 				else if(comboBox.getSelectedIndex()==2) {
 					if(LoginPageDatabase.LoginPageDatabaseAdmincheck(phoneNumber, passwordString)) {
 						ProfileDatabase.profiledata(phoneNumber,passwordString);
-						JOptionPane.showMessageDialog(null, "Logged In Successfully as " + option, "Success", JOptionPane.INFORMATION_MESSAGE);
+						JOptionPane.showMessageDialog(null, "Logged In Successfully as  " + option, "Success", JOptionPane.INFORMATION_MESSAGE);
 						frame.setVisible(false);
-						new DashBoard();
+						new AdminDashBoard();
 						
 					}else {
 						JOptionPane.showMessageDialog(null, "Number and Password doesnt match", "Error", JOptionPane.ERROR_MESSAGE);
@@ -214,7 +195,7 @@ public class LogInPage {
 		});
 		btnNewButton.setBackground(new Color(255, 255, 255));
 		btnNewButton.setFont(new Font("Nirmala UI", Font.BOLD, 20));
-		btnNewButton.setBounds(290, 611, 95, 31);
+		btnNewButton.setBounds(265, 622, 120, 35);
 		panel_1.add(btnNewButton);
 		
 		JLabel lblNewLabel_7 = new JLabel("Donot have Account?");
@@ -238,10 +219,53 @@ public class LogInPage {
 		
 		JLabel lblNewLabel_4 = new JLabel("Mode");
 		lblNewLabel_4.setFont(new Font("Nirmala UI", Font.PLAIN, 25));
-		lblNewLabel_4.setBounds(144, 515, 71, 25);
+		lblNewLabel_4.setBounds(154, 488, 85, 39);
 		panel_1.add(lblNewLabel_4);
+		Image image = new ImageIcon(this.getClass().getResource("/eye.png")).getImage();
+		Image image4 = new ImageIcon(this.getClass().getResource("/eye-off.png")).getImage();
 		
-
+		tglbtnNewToggleButton_1 = new JToggleButton();
+		tglbtnNewToggleButton_1.setBackground(new Color(255, 255, 255));
+		tglbtnNewToggleButton_1.setBounds(494, 398, 33, 28);
+		panel_1.add(tglbtnNewToggleButton_1);
+		tglbtnNewToggleButton_1.setVisible(false);
+		tglbtnNewToggleButton_1.addMouseListener(new MouseAdapter() {
+		    public void mousePressed(MouseEvent e) {
+		        tglbtnNewToggleButton.setVisible(true);
+		        tglbtnNewToggleButton_1.setVisible(false);
+		        passwordField.setEchoChar('*');
+		    }
+		});
+		tglbtnNewToggleButton_1.setIcon(new ImageIcon(image));
+		
+			
+			tglbtnNewToggleButton = new JToggleButton();
+			tglbtnNewToggleButton.setBackground(new Color(255, 255, 255));
+			tglbtnNewToggleButton.setBounds(494, 398, 33, 28);
+			panel_1.add(tglbtnNewToggleButton);
+			tglbtnNewToggleButton.addMouseListener(new MouseAdapter() {
+			    public void mousePressed(MouseEvent e) {
+			        tglbtnNewToggleButton.setVisible(false);
+			        tglbtnNewToggleButton_1.setVisible(true);
+			        passwordField.setEchoChar((char) 0);
+			    }
+			});
+			tglbtnNewToggleButton.setIcon(new ImageIcon(image4));
+			
+			JLabel lblNewLabel_6 = new JLabel("Forget Password");
+			lblNewLabel_6.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent e) {
+					frame.setVisible(true);
+					new forgetpassword();
+					
+				}
+			});
+			lblNewLabel_6.setBounds(339, 427, 192, 35);
+			panel_1.add(lblNewLabel_6);
+			lblNewLabel_6.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		
+		
 		
 		JLabel lblNewLabel_9 = new JLabel("");
 		   Image Rectangle = new ImageIcon(this.getClass().getResource("/Rectangle 1.png")).getImage();
@@ -251,6 +275,14 @@ public class LogInPage {
 		
 		lblNewLabel_9.setBounds(0, -15, 640, 848);
 		panel_1.add(lblNewLabel_9);
+		
+	
+		
+		
+		
+
+		
+		
 		
 		
 	
