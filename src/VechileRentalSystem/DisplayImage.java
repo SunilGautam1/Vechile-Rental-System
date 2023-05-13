@@ -53,7 +53,7 @@ public class DisplayImage {
                 label.setIcon(icon);
             }
 
-            // Close result set, statement, and connection
+            // Closing  result set, statement, and connection
             rs.close();
             stmt.close();
             conn.close();
