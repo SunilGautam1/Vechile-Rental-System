@@ -40,7 +40,7 @@ public class QuestionAnswer {
 		initialize();
 	}
 
-	/**
+	/** 
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
@@ -65,7 +65,7 @@ public class QuestionAnswer {
 		panel.add(textField);
 		textField.setColumns(10);
 		
-		JLabel lblNewLabel_2 = new JLabel("1.   What is your Family name?");
+		JLabel lblNewLabel_2 = new JLabel("1.   What is your Family name?");  // Question
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblNewLabel_2.setBounds(10, 161, 679, 52);
 		panel.add(lblNewLabel_2);
