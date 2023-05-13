@@ -46,7 +46,7 @@ public class DisplayImage {
                 // Read image from input stream
                 Image image = ImageIO.read(in);
 
-                // Create image icon from image
+                // Creating image icon from image
                 ImageIcon icon = new ImageIcon(image);
 
                 // Set icon to label
