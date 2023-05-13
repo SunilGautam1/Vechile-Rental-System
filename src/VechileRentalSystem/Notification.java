@@ -221,7 +221,7 @@ Image img2 = new ImageIcon(this.getClass().getResource("/back-button.png")).getI
       		            
       		           
 
-      		            // Connect to the database and retrieve the rows from the table
+      		            // Connecting  to the database and retrieve the rows from the table
       		          String url1 = "jdbc:mysql://localhost:3306/OurSystem";
       		        String user = "root";
       		        String password1 = "sunil123";
