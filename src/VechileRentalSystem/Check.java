@@ -148,7 +148,7 @@ Image img2 = new ImageIcon(this.getClass().getResource("/back-button.png")).getI
             }
         });
     }
-    private boolean compareWithDatabase(String answer1, String answer2, String answer3, String pn_number) {
+    private boolean compareWithDatabase(String answer1, String answer2, String answer3, String pn_number) { // function
         boolean match = false;
         try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/OurSystem", "root", "sunil123");
              PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM userdetails WHERE Phone_Number=? AND question=? AND question1=? AND question2=?")) {
