@@ -217,7 +217,7 @@ public class ProfileUpdate {
 				String Phone = textField_3.getText();
 				
 
-				String url= "jdbc:mysql://localhost:3306/Oursystem";  // connect to database
+				String url= "jdbc:mysql://localhost:3306/Oursystem";  // connecting to database
 				String username = "root";
 				String password = "sunil123";
 				
